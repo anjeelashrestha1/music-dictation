@@ -1,6 +1,5 @@
 public class AudioFile {
 
-	private int audioId;
 	private String fileName;
 	private String fileType;
 	private double duration;
@@ -26,5 +25,5 @@ public class AudioFile {
 		// TODO - implement AudioFile.delete
 		throw new UnsupportedOperationException();
 	}
-
 }
+
