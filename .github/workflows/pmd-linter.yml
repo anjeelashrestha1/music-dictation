@@ -1,0 +1,30 @@
+name: PMD Linter
+
+on:
+  push:
+    branches:
+      - add-pmd-linter
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  pmd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Run PMD
+        uses: pmd/pmd-github-action@v2
+        with:
+          version: '7.28.0'
+          sourcePath: 'src/main/java'
+          rulesets: 'pmd-ruleset.xml'
